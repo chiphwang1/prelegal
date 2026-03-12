@@ -214,7 +214,10 @@ function NdaPdfDocument({ data }: { data: NdaFormData }) {
 
         {STANDARD_TERMS_SECTIONS.map((section) => (
           <Text style={styles.numberedItem} key={section.num}>
-            {section.num}. {section.title}. {section.text}
+            <Text style={{ fontFamily: "Helvetica-Bold" }}>
+              {section.num}. {section.title}.{" "}
+            </Text>
+            {section.text}
           </Text>
         ))}
 

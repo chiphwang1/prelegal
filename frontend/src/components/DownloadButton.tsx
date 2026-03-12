@@ -22,7 +22,8 @@ export default function DownloadButton({ data }: DownloadButtonProps) {
       document.body.appendChild(a);
       a.click();
       document.body.removeChild(a);
-      URL.revokeObjectURL(url);
+      // Delay revocation to allow Safari to initiate the download
+      setTimeout(() => URL.revokeObjectURL(url), 100);
     } catch (err) {
       console.error("PDF generation failed:", err);
       alert("Failed to generate PDF. Please try again.");
